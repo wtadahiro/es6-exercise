@@ -1,0 +1,20 @@
+{
+  "name": "es6-exercise",
+  "version": "1.0.0",
+  "description": "just for my es6 exercise",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-env": "^1.1.4",
+    "babel-preset-react": "^6.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tadahiro.wada",
+  "license": "MIT"
+}
