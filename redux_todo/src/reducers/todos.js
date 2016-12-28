@@ -10,8 +10,6 @@ import {VisibilityFilters} from '../actions'
 const {SHOW_ALL} = VisibilityFilters
 
 const todo = (state = {}, action) => {
-    console.log(state)
-    console.log(action)
     switch(action.type){
         case ADD_TODO:
             return {
