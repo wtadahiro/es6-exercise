@@ -1,7 +1,7 @@
 {
   "presets": [
-    "power-assert",
     "es2015",
+    "power-assert",
     "react",
     "stage-0"
   ]

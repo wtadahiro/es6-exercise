@@ -6,7 +6,10 @@ module.exports = {
     path: './public/',
     filename: '[name].bundle.js',
   },
-  moduel: {
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  },
+  module: {
     loaders: [
       {
         test: /\.(js|jsx)$/,
@@ -16,9 +19,6 @@ module.exports = {
         },
       },
     ],
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx'],
   },
   devtool: 'source-map',
 };
