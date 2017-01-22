@@ -66,9 +66,13 @@
 	
 	var _reducer2 = _interopRequireDefault(_reducer);
 	
+	var _logger = __webpack_require__(220);
+	
+	var _logger2 = _interopRequireDefault(_logger);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var store = (0, _redux.createStore)(_reducer2.default);
+	var store = (0, _redux.createStore)(_reducer2.default, (0, _redux.applyMiddleware)(_logger2.default));
 	
 	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRedux.Provider,
@@ -23983,7 +23987,7 @@
 /* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -24000,9 +24004,9 @@
 	  var value = _ref.value,
 	      _onChange = _ref.onChange;
 	  return _react2.default.createElement(
-	    'div',
+	    "div",
 	    null,
-	    _react2.default.createElement('input', { type: 'text', value: value, onChange: function onChange(e) {
+	    _react2.default.createElement("input", { type: "text", value: value, onChange: function onChange(e) {
 	        return _onChange(e.target.value);
 	      } })
 	  );
@@ -24048,7 +24052,7 @@
 	  var action = arguments[1];
 	
 	  switch (action.type) {
-	    case "UPDATE_FOO":
+	    case 'UPDATE_FOO':
 	      return action.foo;
 	
 	    default:
@@ -24061,7 +24065,7 @@
 	  var action = arguments[1];
 	
 	  switch (action.type) {
-	    case "UPDATE_BAR":
+	    case 'UPDATE_BAR':
 	      return action.bar;
 	
 	    default:
@@ -24075,6 +24079,27 @@
 	});
 	
 	exports.default = reducer;
+
+/***/ },
+/* 220 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var logger = function logger(store) {
+	  return function (next) {
+	    return function (action) {
+	      console.log('action begin', action);
+	      next(action);
+	      console.log('action done', action);
+	    };
+	  };
+	};
+	
+	exports.default = logger;
 
 /***/ }
 /******/ ]);

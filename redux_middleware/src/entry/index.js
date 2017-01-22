@@ -5,9 +5,12 @@ import { createStore, applyMiddleware } from 'redux';
 
 import Example from '../containers/example';
 import reducer from '../reducers/reducer';
+import logger from '../middlewares/logger';
+
 
 const store = createStore(
   reducer,
+  applyMiddleware(logger),
 );
 
 ReactDOM.render(
