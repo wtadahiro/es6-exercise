@@ -6,7 +6,7 @@
   "author": "tadahiro wada",
   "license": "MIT",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register 'test/**/*.spec.js'",
+    "test": "mocha 'test/**/*.spec.js'",
     "webpack": "webpack",
     "lint": "eslint --fix --ext .js,.jsx src test"
   },
@@ -30,6 +30,8 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
+    "jsdom": "^9.9.1",
+    "jsdom-global": "^2.1.1",
     "mocha": "^3.1.2",
     "power-assert": "^1.4.2",
     "webpack": "^1.14.0"
